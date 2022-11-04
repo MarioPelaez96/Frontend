@@ -24,7 +24,7 @@ export class MostrarClienteComponent implements OnInit {
     this.clienteService.getAllCliente()
       .subscribe({
         next: (data) => {
-          this.clientes = data.cliente
+          this.clientes = data.clientes
           console.log(this.clientes)
         }
       })

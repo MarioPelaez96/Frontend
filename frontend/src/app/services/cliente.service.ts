@@ -9,19 +9,19 @@ import { ClienteI } from '../models/cliente';
 export class ClienteService {
   api_uri_nodejs = 'http://localhost:4000';
   api_uri_django = 'http://localhost:8000';
-  base_path = `${this.api_uri_nodejs}/clientes/`
+  base_path = `${this.api_uri_django}/clientes/`
   constructor(
     private http:HttpClient
   ) { }
 
-  getAllCliente():Observable<{cliente:ClienteI[]}>{
+  getAllCliente():Observable<{clientes:ClienteI[]}>{
     return this.http
-      .get<{cliente:ClienteI[]}>(this.base_path)
+      .get<{clientes:ClienteI[]}>(this.base_path)
   }
 
-  getOneCliente():Observable<{cliente:ClienteI[]}>{
+  getOneCliente():Observable<{clientes:ClienteI[]}>{
     return this.http
-      .get<{cliente:ClienteI[]}>(this.base_path)
+      .get<{clientes:ClienteI[]}>(this.base_path)
   }
 
   createCliente(data: any):Observable<ClienteI>{
