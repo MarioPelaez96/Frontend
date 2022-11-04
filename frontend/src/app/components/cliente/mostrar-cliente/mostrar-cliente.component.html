@@ -1,3 +1,16 @@
+<div class="flex align-items-center justify-content-end bg-cyan-100">
+    <a 
+      pButton 
+      pRipple
+      label="Crear Clientes" 
+      icon="pi pi-user-plus"
+      class="bg-cyan-600"
+      [routerLink]="['/addclientes']">
+    </a>
+
+
+</div>
+
 <p-table [value]="clientes">
     <ng-template pTemplate="header">
         <tr>
@@ -17,9 +30,31 @@
             <td>{{clientes.telefonoCliente}}</td>
             <td>{{clientes.correoCliente}}</td>
             <td>
-                <p-button icon="pi pi-print" class="mr-1"></p-button>
-                <p-button icon="pi pi-sync" class="mx-1"></p-button>
-                <p-button icon="pi pi-eraser" class="mx-1"></p-button>
+                <button
+                    pButton 
+                    pRipple
+                    icon="pi pi-print"
+                    class="bg-cyan-600  mr-1">
+
+                </button>
+
+                <a
+                    pButton 
+                    pRipple
+                    icon="pi pi-sync"
+                    class="bg-cyan-600  mr-1">
+
+                </a>
+
+                <button 
+                 type="button"
+                 pButton 
+                 pRipple
+                 icon="pi pi-eraser"
+                 class="bg-cyan-600  mr-1">
+
+                </button>
+
 
             </td>
         </tr>

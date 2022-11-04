@@ -27,11 +27,13 @@ import { CrearVentaComponent } from './components/venta/crear-venta/crear-venta.
 import { ActualizarVentaComponent } from './components/venta/actualizar-venta/actualizar-venta.component';
 import { EliminarVentaComponent } from './components/venta/eliminar-venta/eliminar-venta.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {TableModule} from 'primeng/table';
 import {ButtonModule} from 'primeng/button';
-
+import {InputTextModule} from 'primeng/inputtext';
+import {ToastModule} from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 
 @NgModule({
@@ -63,11 +65,16 @@ import {ButtonModule} from 'primeng/button';
     BrowserAnimationsModule,
     MenubarModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     TableModule,
-    ButtonModule
+    ButtonModule,
+    InputTextModule,
+    ToastModule
   ],
-  providers: [],
+  providers: [
+    MessageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
