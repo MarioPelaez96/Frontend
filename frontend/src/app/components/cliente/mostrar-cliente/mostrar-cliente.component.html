@@ -1,16 +1,16 @@
 <div class="flex align-items-center justify-content-end bg-cyan-100">
     <a 
-      pButton 
-      pRipple
-      label="Crear Clientes" 
-      icon="pi pi-user-plus"
-      class="bg-cyan-600"
-      [routerLink]="['/addclientes']">
-    </a>
-
+    pButton 
+    pRipple
+    label="Crear Clientes" 
+    icon="pi pi-user-plus"
+    class="bg-cyan-600"
+    [routerLink]="['/addclientes']"></a>
 
 </div>
-
+<div>
+    <p-toast></p-toast>
+</div>
 <p-table [value]="clientes">
     <ng-template pTemplate="header">
         <tr>
@@ -30,29 +30,29 @@
             <td>{{clientes.telefonoCliente}}</td>
             <td>{{clientes.correoCliente}}</td>
             <td>
-                <button
+                <button 
                     pButton 
                     pRipple
                     icon="pi pi-print"
-                    class="bg-cyan-600  mr-1">
-
+                    class="bg-cyan-600  mr-1"
+                    (click)="imprimir(clientes.id)">
                 </button>
 
-                <a
-                    pButton 
-                    pRipple
-                    icon="pi pi-sync"
-                    class="bg-cyan-600  mr-1">
-
+                <a 
+                pButton 
+                pRipple
+                icon="pi pi-sync"
+                class="bg-cyan-600  mr-1"
+                [routerLink]="['/clientes/edit', clientes.id]">
                 </a>
 
                 <button 
-                 type="button"
+                type="button"
                  pButton 
                  pRipple
                  icon="pi pi-eraser"
-                 class="bg-cyan-600  mr-1">
-
+                 class="bg-cyan-600  mr-1"
+                 (click)="eliminar(clientes.id)">
                 </button>
 
 

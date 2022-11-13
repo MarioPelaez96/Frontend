@@ -33,7 +33,7 @@ export class ClienteService {
   }
 
   deleteCliente(id: number): Observable<ClienteI> {
-    return this.http.delete<ClienteI>(`${this.base_path}/${id}`);
+    return this.http.delete<ClienteI>(`${this.base_path}${id}`);
   }
 
 
